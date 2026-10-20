@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>financer · Privacy and Terms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap">
+<style>
+/* Layout: one narrow reading column, two sections (#privacy, #terms) with a small jump bar. Archivo, financer's own face. */
+:root {
+  --bg: #f3f2f2;
+  --fg: #201e1d;
+  --muted: #5f5b5a;
+  --line: rgba(32, 30, 29, .16);
+  --accent: #ae1800;
+  --font: Archivo, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #151414; --fg: #f0eeee; --muted: #a9a4a3; --line: rgba(240, 238, 238, .16); --accent: #ff8a75; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #151414; --fg: #f0eeee; --muted: #a9a4a3; --line: rgba(240, 238, 238, .16); --accent: #ff8a75; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--font); }
+.wrap { max-width: 42rem; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 40px; }
+header { display: grid; gap: 8px; }
+h1 { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; margin: 0; text-wrap: balance; }
+.meta { color: var(--muted); font-size: .875rem; margin: 0; }
+nav { display: flex; gap: 20px; flex-wrap: wrap; font-weight: 600; font-size: .9375rem; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+section { display: grid; gap: 12px; border-top: 2px solid var(--fg); padding-top: 20px; }
+h2 { font-size: 1.375rem; font-weight: 800; letter-spacing: -.02em; margin: 0; }
+h3 { font-size: 1rem; font-weight: 800; margin: 12px 0 0; }
+p, ul { margin: 0; }
+ul { padding-left: 1.2em; display: grid; gap: 6px; }
+.note { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--line); padding-top: 12px; }
+
+html { margin: 0; }
+body { margin: 0; }
+.callback { display: grid; gap: 12px; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .875rem; word-break: break-all; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>financer · Privacy and Terms</h1>
+    <p class="meta">As of 20.10.2026 · applies to the financer application registered with Enable Banking</p>
+    <nav aria-label="Pages"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  </header>
+  <section id="privacy" aria-labelledby="privacy-h">
+    <h2 id="privacy-h">Privacy</h2>
+    <p>financer is a personal finance app. It runs on a server its owner runs for themself, and it is used only by that owner. Nobody else's data is processed.</p>
+
+    <h3>What financer reads</h3>
+    <ul>
+      <li>Through Enable Banking (account information, read-only): the accounts the owner chooses to share, their balances and their booked transactions.</li>
+      <li>Nothing else from the bank. financer can't make payments, transfers or other orders.</li>
+    </ul>
+
+    <h3>Where it is kept</h3>
+    <ul>
+      <li>On the owner's own financer server, in its database. The Enable Banking session is stored encrypted (AES-256-GCM).</li>
+      <li>financer never sees or stores the online banking login, PIN or TAN for Enable Banking connections: the owner confirms access on the bank's own pages.</li>
+    </ul>
+
+    <h3>Who else gets it</h3>
+    <ul>
+      <li>No one. financer has no analytics, tracking, advertising or other third parties, and doesn't sell or share data.</li>
+      <li>Enable Banking Oy relays the data from the bank under its own privacy notice, at enablebanking.com.</li>
+    </ul>
+
+    <h3>How long, and how to stop it</h3>
+    <ul>
+      <li>Access lasts as long as the bank's consent (usually 180 days) and ends sooner when the owner removes the connection in financer, which also closes the session at Enable Banking.</li>
+      <li>The consent can be withdrawn at any time at the bank as well.</li>
+      <li>Removing an account in financer deletes its balances and transactions from the server.</li>
+    </ul>
+  </section>
+
+  <section id="terms" aria-labelledby="terms-h">
+    <h2 id="terms-h">Terms</h2>
+    <ul>
+      <li>financer is for its owner's personal, non-commercial use. It isn't offered to other people.</li>
+      <li>It only reads account information. It never initiates payments.</li>
+      <li>Balances, projections and categories are estimates from the data the bank provides. They are not financial advice, and the bank's own statements are what count.</li>
+      <li>financer comes without warranty. Its owner runs it at their own risk and keeps the server and its access token safe.</li>
+      <li>Use of the bank connection is also subject to the bank's terms and Enable Banking's terms.</li>
+    </ul>
+    <p class="note">financer is self-hosted software. These pages describe how this one installation handles data.</p>
+  </section>
+</div>
+
+</body>
+</html>
